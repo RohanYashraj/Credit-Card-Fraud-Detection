@@ -19,21 +19,21 @@ library(dashboardthemes)
 h2o.init()
 
 ## Load saved model
-model <- h2o.loadModel("/home/diwash/projeckt/credit_card_feaud/model/GBM_model_R_1558482610633_2")
+model <- h2o.loadModel("./model/GBM_model_R_1558482610633_2")
 ## Random Forest
-modelrf <- h2o.loadModel("/home/diwash/projeckt/credit_card_feaud/credit-card-fraud-detector/model/improve/DRF_model_R_1561701961587_4087")
+modelrf <- h2o.loadModel("./model/DRF_model_R_1561701961587_2")
 ## Xgboost
-modelxg <- h2o.loadModel("/home/diwash/projeckt/credit_card_feaud/credit-card-fraud-detector/model/improve/XGBoost_model_R_1561701961587_2048")
+modelxg <- h2o.loadModel("./model/XGBoost_model_R_1561701961587_884")
 ## GBM model
-modelgb <- h2o.loadModel("/home/diwash/projeckt/credit_card_feaud/credit-card-fraud-detector/model/improve/GBM_model_R_1561701961587_2817")
+modelgb <- h2o.loadModel("./model/GBM_model_R_1558482610633_2")
 
 
 ## For LIME
-train <- fread("/home/diwash/projeckt/credit_card_feaud/train.csv")
-explainer <- lime(train, model, n_bins = 5)
-explainer_xg <- lime(train, modelxg, n_bins = 5)
-explainer_gb <- lime(train, modelgb, n_bins = 5)
-explainer_rf <- lime(train, modelrf, n_bins = 5)
+# train <- fread("/home/diwash/projeckt/credit_card_feaud/train.csv")
+# explainer <- lime(train, model, n_bins = 5)
+# explainer_xg <- lime(train, modelxg, n_bins = 5)
+# explainer_gb <- lime(train, modelgb, n_bins = 5)
+# explainer_rf <- lime(train, modelrf, n_bins = 5)
 
 
 #### Highcharter
